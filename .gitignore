@@ -1,0 +1,7 @@
+/private
+/exports
+*.pdf
+*.xlsx
+*.csv
+.DS_Store
+Thumbs.db

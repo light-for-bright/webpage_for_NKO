@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>График роста, веса и окружности головы</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/print.css" media="print" />
+</head>
+<body>
+  <main class="page">
+    <nav class="site-nav no-print" aria-label="Разделы графиков">
+      <a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">0-48 месяцев</a>
+      <a class="site-nav__link" href="achondroplasia_growth_weight_page_fixed_height_under_80.html">4-20 лет</a>
+    </nav>
+
+    <header class="page-header">
+      <div>
+        <h1>График роста, веса и окружности головы</h1>
+        <p>Интерактивное нанесение пользовательских измерений на референсный график 0-48 месяцев.</p>
+      </div>
+      <p class="legal-note">
+        Инструмент предназначен для визуализации данных и не заменяет консультацию врача.
+        Интерпретацию графиков должен выполнять медицинский специалист.
+      </p>
+    </header>
+
+    <div class="page-layout">
+      <section class="chart-wrapper" id="chart" aria-label="График роста, веса и окружности головы">
+        <img
+          class="chart-image"
+          src="assets/growth-chart-achondroplasia-male-0-48.png"
+          alt="Референсный график роста, веса и окружности головы для мальчиков 0-48 месяцев"
+        />
+        <svg class="user-plot" viewBox="0 0 768 1094" preserveAspectRatio="none" aria-hidden="true">
+          <g id="userLayer"></g>
+        </svg>
+      </section>
+
+      <aside class="data-panel" aria-label="Таблица пользовательских измерений">
+        <h2>Данные ребёнка</h2>
+        <p class="panel-note">
+          Введите значения в строках с нужным возрастом. Значения хранятся только в браузере на этом устройстве.
+        </p>
+
+        <div class="legend" aria-label="Обозначения пользовательских линий">
+          <span class="height"><i></i>Рост</span>
+          <span class="weight"><i></i>Вес</span>
+          <span class="headCircumference"><i></i>ОГ</span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-entry">
+            <thead>
+              <tr>
+                <th>Возраст<br>(мес.)</th>
+                <th>Рост<br>(см)</th>
+                <th>Вес<br>(кг)</th>
+                <th>ОГ<br>(см)</th>
+              </tr>
+            </thead>
+            <tbody id="userRows"></tbody>
+          </table>
+        </div>
+
+        <div class="controls no-print">
+          <button type="button" id="fillTestDataBtn">Заполнить тестовые данные</button>
+          <button type="button" id="clearDataBtn">Очистить данные</button>
+          <button type="button" id="printPageBtn">Печать / сохранить PDF</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
