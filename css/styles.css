@@ -108,6 +108,10 @@ body {
   align-items: start;
 }
 
+.page-layout--4-20 {
+  grid-template-columns: minmax(480px, 703px) minmax(360px, 1fr);
+}
+
 .chart-wrapper {
   position: relative;
   width: 100%;
@@ -116,6 +120,10 @@ body {
   box-shadow: var(--shadow-card);
   overflow: hidden;
   user-select: none;
+}
+
+.chart-wrapper--4-20 {
+  aspect-ratio: 703 / 1024;
 }
 
 .chart-card {
@@ -270,6 +278,10 @@ body {
   gap: 6px;
   margin: 8px 0 12px;
   font-size: 12px;
+}
+
+.legend--two-cols {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .legend span {

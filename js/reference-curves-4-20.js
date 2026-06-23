@@ -1,0 +1,40 @@
+export const greyReferenceCurves = {
+  height: [
+    { age: 4, height: 92 },
+    { age: 5, height: 92 },
+    { age: 6, height: 98 },
+    { age: 7, height: 105 },
+    { age: 8, height: 105 },
+    { age: 9, height: 105 },
+    { age: 10, height: 112 },
+    { age: 11, height: 118 },
+    { age: 12, height: 118 },
+    { age: 13, height: 124 },
+    { age: 14, height: 124 },
+    { age: 15, height: 124 },
+    { age: 16, height: 129 },
+    { age: 17, height: 129 },
+    { age: 18, height: 133 },
+    { age: 19, height: 133 },
+    { age: 20, height: 136 }
+  ],
+  weight: [
+    { age: 4, weight: 15.5 },
+    { age: 5, weight: 15.5 },
+    { age: 6, weight: 18.0 },
+    { age: 7, weight: 21.0 },
+    { age: 8, weight: 21.0 },
+    { age: 9, weight: 21.0 },
+    { age: 10, weight: 25.0 },
+    { age: 11, weight: 30.0 },
+    { age: 12, weight: 30.0 },
+    { age: 13, weight: 36.0 },
+    { age: 14, weight: 36.0 },
+    { age: 15, weight: 36.0 },
+    { age: 16, weight: 43.0 },
+    { age: 17, weight: 43.0 },
+    { age: 18, weight: 50.0 },
+    { age: 19, weight: 50.0 },
+    { age: 20, weight: 56.0 }
+  ]
+};

@@ -1,131 +1,259 @@
 @page {
-  size: A4 landscape;
-  margin: 8mm;
+  size: A4 portrait;
+  margin: 6mm;
 }
 
 @media print {
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  html,
   body {
-    margin: 0;
-    padding: 0;
-    background: white;
-    color: black;
-  }
-
-  .controls,
-  .no-print {
-    display: none !important;
-  }
-
-  .page {
-    width: 100%;
-    margin: 0;
-  }
-
-  .page-header {
-    display: block;
-    margin-bottom: 6mm;
-  }
-
-  .page-header h1 {
-    font-size: 18pt;
-  }
-
-  .legal-note {
-    border-color: #999;
-    background: white;
-    color: black;
-  }
-
-  .page-layout {
-    display: block;
-  }
-
-  .chart-wrapper {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    box-shadow: none;
-    page-break-inside: avoid;
-    break-inside: avoid;
-  }
-
-  .page--fixed-chart {
-    display: block;
-    width: 100%;
+    width: auto;
     min-width: 0;
+    min-height: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    overflow: hidden !important;
   }
 
-  .chart-card {
-    width: 100%;
-    max-width: 100%;
-    border: none;
-    box-shadow: none;
-    page-break-inside: avoid;
-    break-inside: avoid;
+  body {
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
   }
 
-  .chart-wrap {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 718 / 1045;
-  }
-
-  .reference-chart,
-  .overlay {
-    width: 100%;
-    height: 100%;
-  }
-
-  .data-panel {
-    page-break-before: always;
-    break-before: page;
-    max-height: none;
-    overflow: visible;
-    box-shadow: none;
-    border: none;
-    padding: 0;
-  }
-
-  .page--fixed-chart .data-panel {
-    position: static;
-    width: 100%;
-    max-height: none;
-    display: block;
-    overflow: visible;
-  }
-
-  .panel-header {
-    padding: 0 0 4mm;
-    border-bottom: none;
-  }
-
-  .legend {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .table-wrap {
-    max-height: none;
-    overflow: visible;
-  }
-
-  input {
-    border: none;
-    background: white;
-  }
-
+  .no-print,
+  .controls,
+  .actions,
+  button,
   .cell-warning {
     display: none !important;
   }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
+  .page {
+    width: 198mm !important;
+    max-width: 198mm !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .page-header {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 64mm !important;
+    gap: 4mm !important;
+    align-items: start !important;
+    margin: 0 0 4mm !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .page-header h1 {
+    margin: 0 0 2mm !important;
+    font-size: 18pt !important;
+    line-height: 1.12 !important;
+  }
+
+  .page-header p {
+    margin: 0 !important;
+    line-height: 1.25 !important;
+  }
+
+  .legal-note {
+    border: 1px solid rgba(180, 35, 24, 0.25) !important;
+    border-radius: 10px !important;
+    background: #fff7f5 !important;
+    color: #6f1d15 !important;
+    padding: 2.5mm 3mm !important;
+    font-size: 9pt !important;
+    line-height: 1.25 !important;
+  }
+
+  .page-layout {
+    display: grid !important;
+    grid-template-columns: 126mm 68mm !important;
+    gap: 4mm !important;
+    align-items: start !important;
+    width: 198mm !important;
+    max-width: 198mm !important;
+    overflow: hidden !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .chart-wrapper {
+    width: 126mm !important;
+    max-width: 126mm !important;
+    height: 179.5mm !important;
+    aspect-ratio: auto !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .chart-wrapper--4-20 {
+    height: 183.4mm !important;
+  }
+
+  .page-layout--4-20 .data-panel {
+    height: 183.4mm !important;
+    max-height: 183.4mm !important;
+  }
+
+  .chart-image,
+  .user-plot {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .data-panel {
+    width: 68mm !important;
+    max-width: 68mm !important;
+    height: 179.5mm !important;
+    max-height: 179.5mm !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+    page-break-before: auto !important;
+    break-before: auto !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    padding: 3mm !important;
+  }
+
+  .data-panel h2,
+  .panel-title {
+    margin: 0 0 2mm !important;
+    font-size: 12pt !important;
+    line-height: 1.15 !important;
+  }
+
+  .panel-note {
+    margin: 0 0 2mm !important;
+    font-size: 8pt !important;
+    line-height: 1.2 !important;
+  }
+
+  .legend {
+    gap: 2mm !important;
+    margin: 2mm 0 3mm !important;
+    padding: 0 !important;
+    border-bottom: 0 !important;
+    font-size: 8pt !important;
+  }
+
+  .table-wrap {
+    max-height: none !important;
+    overflow: hidden !important;
+  }
+
+  table,
+  .data-entry {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 8pt !important;
   }
 
   th,
-  td {
-    border: 1px solid #999;
-    padding: 4px;
+  td,
+  .data-entry th,
+  .data-entry td {
+    border: 1px solid rgba(7, 108, 52, 0.22) !important;
+    padding: 1mm !important;
+    text-align: center !important;
+    line-height: 1.1 !important;
+  }
+
+  th,
+  .data-entry th {
+    position: static !important;
+    background: #effaf3 !important;
+    color: var(--green) !important;
+  }
+
+  .data-entry input,
+  input {
+    width: 100% !important;
+    min-width: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    font: inherit !important;
+    text-align: center !important;
+  }
+
+  .page--fixed-chart {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 4mm !important;
+    width: 198mm !important;
+    max-width: 198mm !important;
+    min-width: 0 !important;
+  }
+
+  .page--fixed-chart .chart-card {
+    width: 132mm !important;
+    max-width: 132mm !important;
+    border: 1px solid var(--border-green) !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .page--fixed-chart .chart-wrap {
+    width: 132mm !important;
+    height: 192.2mm !important;
+    aspect-ratio: auto !important;
+    overflow: hidden !important;
+  }
+
+  .page--fixed-chart .reference-chart,
+  .page--fixed-chart .overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 132mm !important;
+    height: 192.2mm !important;
+  }
+
+  .page--fixed-chart .data-panel {
+    position: static !important;
+    width: 62mm !important;
+    max-width: 62mm !important;
+    height: 192.2mm !important;
+    max-height: 192.2mm !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .page--fixed-chart .panel-header {
+    padding: 3mm !important;
+    border-bottom: 1px solid var(--border-green) !important;
+  }
+
+  .page--fixed-chart .legend {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    padding: 2mm 3mm !important;
+    margin: 0 !important;
+    border-bottom: 1px solid var(--border-green) !important;
+  }
+
+  .page--fixed-chart .table-wrap {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    border: 0 !important;
   }
 }
